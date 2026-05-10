@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #007bff;
+    --bg-color: #001a33; /* Sombre pour la transition */
+    --text-color: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.12); /* Très transparent */
+}
+
+body { 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-image: url('Fond.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--bg-color);
+}
+
+nav { 
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 15px; 
+    position: sticky; 
+    top: 0; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a { 
+    text-decoration: none; 
+    color: #ffffff; 
+    font-weight: bold; 
+    font-size: 0.85em; 
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+section { 
+    background: var(--card-bg);
+    border-radius: 16px;
+    margin-bottom: 25px; 
+    padding: 30px; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+h2 { 
+    color: #ffffff; 
+    border-left: 5px solid var(--primary-color); 
+    padding-left: 15px;
+    margin-top: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-style: normal; 
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.rtl { direction: rtl; text-align: right; }
+.rtl h2 { border-left: none; border-right: 5px solid var(--primary-color); padding-left: 0; padding-right: 15px; }
+
+footer { text-align: center; padding: 20px; font-size: 0.8em; color: rgba(255,255,255,0.6); }
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
