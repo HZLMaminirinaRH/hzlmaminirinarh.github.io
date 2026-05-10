@@ -12,18 +12,25 @@
             --primary-color: #007bff;
             --bg-color: #f4f7f6;
             --text-color: #333;
-            --card-bg: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.9); /* Légère transparence pour voir le fond */
         }
         body { 
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             line-height: 1.6; 
-            background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             padding: 0;
+
+            /* Ajout de l'image de fond */
+            background-image: url('Fond.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: var(--bg-color); /* Couleur de secours */
         }
         nav { 
-            background: #ffffff; 
+            background: rgba(255, 255, 255, 0.95); 
             padding: 15px; 
             position: sticky; 
             top: 0; 
@@ -33,6 +40,7 @@
             gap: 8px; 
             justify-content: center;
             z-index: 1000;
+            backdrop-filter: blur(5px); /* Flou sous la barre de navigation */
         }
         nav a { 
             text-decoration: none; 
@@ -58,7 +66,9 @@
             border-radius: 12px;
             margin-bottom: 25px; 
             padding: 30px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px); /* Effet de flou sur les cartes */
+            -webkit-backdrop-filter: blur(10px);
         }
         h2 { 
             color: #2c3e50; 
@@ -82,7 +92,7 @@
         .rtl { direction: rtl; text-align: right; }
         .rtl h2 { border-left: none; border-right: 5px solid var(--primary-color); padding-left: 0; padding-right: 15px; }
         
-        footer { text-align: center; padding: 20px; font-size: 0.8em; color: #888; }
+        footer { text-align: center; padding: 20px; font-size: 0.8em; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
         
         #back-to-top {
             position: fixed;
