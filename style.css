@@ -1,114 +1,179 @@
+/* style.css - Reconfiguration Glassmorphism Premium */
+
 :root {
-    --primary-color: #007bff;
-    --bg-color: #001a33; /* Sombre pour la transition */
-    --text-color: #ffffff;
-    --card-bg: rgba(255, 255, 255, 0.12); /* Très transparent */
+    --primary-color: #ffffff; /* Texte principal en blanc */
+    --accent-color: #007bff; /* Bleu pour les liens importants */
+    --glass-bg: rgba(255, 255, 255, 0.08); /* Très transparent */
+    --glass-border: rgba(255, 255, 255, 0.15); /* Bordure très fine */
+    --glass-blur: blur(15px); /* Effet de flou dépoli */
 }
 
 body { 
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif; /* Plus moderne */
+    font-weight: 300; /* Plus fin, comme dans l'exemple */
     line-height: 1.6; 
-    color: var(--text-color);
+    color: var(--primary-color);
     margin: 0;
     padding: 0;
+
+    /* Conservation de Fond.jpg avec effet adouci */
     background-image: url('Fond.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: var(--bg-color);
+    
+    /* Overlay sombre pour améliorer le contraste du texte blanc */
+    background-color: rgba(0, 0, 0, 0.2); 
+    background-blend-mode: overlay;
 }
 
+/* --- RECONFIGURATION DE LA BARRE DE NAVIGATION (LANGUES) --- */
 nav { 
-    background: rgba(255, 255, 255, 0.1); 
-    padding: 15px; 
-    position: sticky; 
-    top: 0; 
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Déplacement en bas */
+    position: fixed; 
+    bottom: 50px; /* Juste au-dessus du footer */
+    left: 50%;
+    transform: translateX(-50%); /* Centrage horizontal */
+    
+    /* Design 'Verre' */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px; /* Très arrondi comme les boutons de l'exemple */
+    
+    padding: 10px 20px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     display: flex; 
-    flex-wrap: wrap; 
-    gap: 8px; 
+    flex-wrap: nowrap; /* Empêche le retour à la ligne pour garder le style */
+    gap: 10px; 
     justify-content: center;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav a { 
     text-decoration: none; 
-    color: #ffffff; 
-    font-weight: bold; 
+    color: white; 
+    font-weight: 400; 
     font-size: 0.85em; 
-    padding: 6px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border: 1px solid transparent;
     border-radius: 20px;
     transition: 0.3s;
+    background: rgba(255, 255, 255, 0.1); /* Petit fond pour chaque langue */
 }
 
 nav a:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
+/* --- RECONFIGURATION DES CARTES DE CONTENU --- */
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 60px auto 120px; /* Plus d'espace en haut et en bas pour le nav */
     padding: 0 15px;
 }
 
 section { 
-    background: var(--card-bg);
-    border-radius: 16px;
-    margin-bottom: 25px; 
-    padding: 30px; 
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(15px); 
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Design 'Verre dépoli' complet */
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px; /* Coins arrondis mais plus carrés que le nav */
+    
+    margin-bottom: 30px; 
+    padding: 40px; /* Plus d'air, comme dans la boîte LOGIN */
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    font-style: normal;
 }
 
 h2 { 
     color: #ffffff; 
-    border-left: 5px solid var(--primary-color); 
-    padding-left: 15px;
+    font-weight: 600;
+    font-size: 1.8em;
+    text-align: center; /* Centré comme LOGIN */
     margin-top: 0;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
+    border: none; /* Suppression de la bordure bleue latérale */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+h2::after { /* Petite ligne d'accent centrée sous le titre */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.85); /* Blanc légèrement adouci pour la lecture */
+    font-size: 1.05em;
+    margin-bottom: 25px;
 }
 
 .contact-info {
-    margin-top: 20px;
-    padding-top: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-style: normal; 
-    font-weight: 500;
-    font-size: 0.9em;
-    color: #ddd;
+    font-weight: 400;
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
 }
 
 .contact-info a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
+    font-weight: 500;
 }
 
-.rtl { direction: rtl; text-align: right; }
-.rtl h2 { border-left: none; border-right: 5px solid var(--primary-color); padding-left: 0; padding-right: 15px; }
+.contact-info a:hover {
+    text-decoration: underline;
+}
 
-footer { text-align: center; padding: 20px; font-size: 0.8em; color: rgba(255,255,255,0.6); }
+/* Gestion du RTL pour l'Arabe et le Persan */
+.rtl { direction: rtl; text-align: right; }
+.rtl h2::after { margin-right: auto; margin-left: auto; } /* Garde la ligne centrée */
+
+/* Footer et bouton retour */
+footer { 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center; 
+    padding: 10px; 
+    font-size: 0.75em; 
+    color: rgba(255,255,255,0.4); 
+    background: rgba(0,0,0,0.2);
+}
 
 #back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary-color);
+    bottom: 90px; /* Plus haut que le nav */
+    right: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-size: 1.2em;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+#back-to-top:hover {
+    background: var(--accent-color);
 }
