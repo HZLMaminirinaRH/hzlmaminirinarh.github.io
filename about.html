@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momba anay | Projet PJ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: #007bff;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav notranslate">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="service.html">SERVICE</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="politiques.html">POLITIQUES</a> 
+    </header>
+
+    <div class="content-container">
+        <section class="glass-card">
+            <h1>Momba anahi (About)</h1>
+            <p>
+                Eto no manoratra ny mombamomba ny tetikasa PJ sy ny fahitanao ny firindrana ara-tsosialy. 
+                Ity pejy ity dia natokana hanazavana ny vina sy ny tanjon'ny tetikasa ho an'ny mpitsidika.
+            </p>
+        </section>
+    </div>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
