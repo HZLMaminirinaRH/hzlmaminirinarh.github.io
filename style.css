@@ -1,179 +1,115 @@
 
 :root {
-    /* Couleurs adaptées au texte noir sur verre blanc */
-    --primary-color: #000000; /* Texte principal Noir */
-    --secondary-text: #555555; /* Texte d'info Gris foncé */
-    --accent-color: #007bff; /* Bleu brillant pour l'email et les accents */
-    
-    /* Paramètres Glassmorphism basés sur le modèle */
-    --glass-bg: rgba(255, 255, 255, 0.15); /* Transparence subtile */
-    --glass-border: rgba(255, 255, 255, 0.25); /* Bordure fine et claire */
-    --glass-blur: blur(20px); /* Flou prononcé pour l'effet 'dépoli' */
-    
-    --shadow-premium: 0 10px 40px rgba(0, 0, 0, 0.2); /* Ombre douce et profonde */
+    --primary-color: #000000; 
+    --accent-color: #007bff; 
+    --glass-bg: rgba(255, 255, 255, 0.18); 
+    --glass-border: rgba(255, 255, 255, 0.25); 
+    --glass-blur: blur(20px); 
+    --shadow-premium: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 body { 
-    /* Polices modernes et fines, calées sur le modèle */
     font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif; 
-    font-weight: 400; /* Poids normal pour le texte noir */
     line-height: 1.6; 
     color: var(--primary-color);
     margin: 0;
     padding: 0;
-
-    /* Conservation stricte de Fond.jpg */
-    background-image: url('Fond.jpg');
+    background-image: url('Fond.jpg'); /* */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    /* Overlay plus clair pour faire ressortir le texte noir */
-    background-color: rgba(255, 255, 255, 0.05); 
-    background-blend-mode: overlay;
 }
 
-/* --- BARRE DE NAVIGATION (LANGUES) EN BAS --- */
+/* --- BARRE DE NAVIGATION JUSTIFIÉE EN BAS --- */
 nav { 
-    /* Déplacement fixe en bas de page */
     position: fixed; 
-    bottom: 40px; 
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 20px; 
+    left: 5%;
+    right: 5%; /* Occupe désormais 90% de la largeur pour un aspect 'justifié' */
     
-    /* Design 'Verre' cohérent */
-    background: rgba(255, 255, 255, 0.35); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
-    border-radius: 30px; /* Coins très arrondis comme dans le modèle */
+    border-radius: 50px; 
     
-    padding: 8px 16px; 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 12px 30px; 
+    box-shadow: var(--shadow-premium);
     display: flex; 
-    flex-wrap: wrap; 
-    gap: 8px; 
-    justify-content: center;
+    justify-content: space-between; /* Justifie les éléments d'un bout à l'autre */
+    align-items: center;
     z-index: 1000;
 }
 
 nav a { 
     text-decoration: none; 
-    color: #000000; /* Noir pour les langues */
+    color: #000000; 
     font-weight: 500; 
-    font-size: 0.85em; 
-    padding: 6px 12px;
-    border-radius: 20px;
+    font-size: 0.9em; 
+    padding: 8px 15px;
+    border-radius: 25px;
     transition: 0.3s;
-    background: rgba(255, 255, 255, 0.2); /* Fond léger pour chaque bouton */
+    background: rgba(255, 255, 255, 0.2);
+    flex-grow: 1; /* Permet aux boutons de se répartir équitablement */
+    text-align: center;
+    margin: 0 5px;
 }
 
 nav a:hover {
     background: var(--accent-color);
-    color: white; /* Passage au blanc au survol */
+    color: white;
 }
 
-/* --- CARTES DE CONTENU (BOÎTES EN VERRE) --- */
+/* --- CONTENU MOINS CENTRÉ (PLUS LARGE) --- */
 .container {
-    max-width: 800px;
-    margin: 50px auto 160px; /* Marge du bas accrue pour la nav mobile */
-    padding: 0 15px;
+    max-width: 1000px; /* Élargissement du conteneur pour occuper plus d'espace */
+    margin: 40px auto 180px; 
+    padding: 0 20px;
 }
 
 section { 
-    /* Application stricte du design 'Verre Dépoli' du modèle */
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
-    border-radius: 20px; /* Arrondi calé sur la boîte 'LOGIN' */
-    
-    margin-bottom: 35px; 
-    padding: 40px; /* Plus d'espace intérieur, comme le modèle */
-    
+    border-radius: 25px;
+    margin-bottom: 40px; 
+    padding: 45px; 
     box-shadow: var(--shadow-premium);
-    font-style: normal;
 }
 
 h2 { 
-    /* Titres Centrés, Noirs et Nets */
     color: #000000; 
-    font-weight: 600;
-    font-size: 1.7em;
-    text-align: center; /* Centré comme 'LOGIN' */
-    margin-top: 0;
-    margin-bottom: 25px;
-    border: none;
+    font-weight: 700;
+    text-align: center; /* Le titre reste le point d'ancrage central */
+    margin-bottom: 30px;
 }
 
-h2::after { /* Petite ligne d'accent bleue centrée */
+h2::after { 
     content: '';
     display: block;
-    width: 60px;
+    width: 80px;
     height: 3px;
     background: var(--accent-color);
-    margin: 8px auto 0;
-}
-
-p {
-    /* Texte Noir sur Verre Blanc */
-    color: #000000; 
-    font-size: 1.05em;
-    margin-bottom: 25px;
-}
-
-.contact-info {
-    /* Style de la section Contact, centré en bas */
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    font-weight: 500;
-    font-size: 0.95em;
-    color: var(--secondary-text);
-    text-align: center;
+    margin: 10px auto 0;
 }
 
 .contact-info a {
-    /* L'EMAIL RESTE BLEU pour l'harmonie et le contraste */
-    color: var(--accent-color);
-    text-decoration: none;
+    color: var(--accent-color) !important; /* Maintien du bleu pour l'email */
     font-weight: 600;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* RTL (Arabe/Persan) */
-.rtl { direction: rtl; text-align: right; }
-.rtl h2::after { margin-right: auto; margin-left: auto; }
-
-/* Footer discret en bas */
-footer { 
-    position: relative;
-    text-align: center; 
-    padding: 20px; 
-    font-size: 0.8em; 
-    color: #333333;
-    margin-bottom: 90px; /* Pour laisser place au Nav fixe */
-}
-
-/* Bouton Retour en haut flottant */
-#back-to-top {
-    position: fixed;
-    bottom: 120px; /* Positionné juste au dessus du nav */
-    right: 25px;
-    background: var(--accent-color);
-    color: white;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
-    font-size: 1.3em;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 1001;
+}
+
+/* Adaptations mobiles pour la barre justifiée */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        bottom: 10px;
+        border-radius: 20px;
+    }
+    nav a {
+        font-size: 0.75em;
+        margin: 2px;
+    }
 }
