@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ny Tolotra | Projet PJ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .service-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 85vh;
+            padding: 40px 20px;
+        }
+
+        /* Style spécifique pour les boîtes de services */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            /* On réutilise l'effet Glassmorphism de vos captures */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: #000;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #005088; /* Votre bleu primaire */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav notranslate">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="service.html">SERVICE</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="politiques.html">POLITIQUES</a> 
+    </header>
+
+    <div class="container service-container">
+        <section class="login-box" style="max-width: 900px; margin-bottom: 20px;">
+            <h2 style="border:none;">Ny Tolotra (Services)</h2>
+            <hr style="width: 60px; border: 2px solid #007bff; margin: 10px auto 30px auto;">
+            <p>Lisitry ny tolotra ho an'ny fampandrosoana numérika sy fandrindràna heverina eto.</p>
+        </section>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Messenger Bot</h3>
+                <p>Fanamarinana compte Meta /Facebook Domain ary fanohanana sy fametrahana bot ho an'ny fifandraisana haingana amin'ny alalan'ny fampiasàna ny "Termux Environment" amin'ny fitaovana android manomboka amin'ny Version 11, toy ny fanaovana sary vita amin'ny Graphviz mamoaka format .PNG na .SVG, sns .</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Sary Graphviz</h3>
+                <p>Famoronana sary sy kisary ara-teknika (flowcharts, diagrams) ho an'ny rafitra.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Fandrindràna Sosialy</h3>
+                <p>Vahaolana manokana ho an'ny fiarahamonina sy ny fifandraisan'ny olona samy olona ary ny fifandraisan'ny olona sy ny "Bot" amin'izao vanim-potoana iainana izao</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
