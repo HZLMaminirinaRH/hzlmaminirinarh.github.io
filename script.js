@@ -21,24 +21,33 @@ function googleTranslateElementInit() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const portalForm = document.getElementById('portalForm');
     
+    // --- Gestion du formulaire NDAO! ---
+    const portalForm = document.getElementById('portalForm');
     if (portalForm) {
         portalForm.addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            
-            
+            e.preventDefault();
             const user = document.getElementById('username').value;
             const pass = document.getElementById('password').value;
 
-            
             if (user.trim() !== "" && pass.trim() !== "") {
-                
                 window.location.href = "vision.html";
             } else {
-               
                 alert("Fenoy ny banga azafady (Veuillez remplir tous les champs)");
             }
         });
     }
+
+    
+    
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        if (link.textContent.includes("Teny miafina adino")) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                alert("Mifandraisa amin'ny Mpandrindra ao amin'ny pejy CONTACT raha hitady ny very, azafady tompoko!");
+            });
+        }
+    });
+
 });
