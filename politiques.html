@@ -7,8 +7,41 @@
     <title>HZLMaminirinarh - Support & Confidentialité</title>
     
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style spécifique pour le menu du haut sur la page politique */
+        .header-nav {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* Ajustement pour ne pas cacher le contenu sous le menu */
+        body {
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
+
+    <header class="header-nav">
+        <a href="index.html">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">SERVICE</a>
+        <a href="#">CONTACT</a>
+        <a href="politiques.html">POLITIQUES</a> 
+    </header>
 
     <nav>
         <a href="#mg">Malgache</a> <a href="#fr">Français</a> <a href="#en">English</a> 
