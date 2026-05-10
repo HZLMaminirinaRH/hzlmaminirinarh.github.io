@@ -8,12 +8,10 @@
     
     <link rel="stylesheet" href="style.css">
     <style>
-        
-          {
+        * {
             box-sizing: border-box;
         }
 
-       
         .header-nav {
             width: 100%;
             display: flex;
@@ -32,20 +30,66 @@
             white-space: nowrap; 
         }
 
-        
         body {
             padding-top: 20px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #005088;
+            font-size: 0.9em;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .rtl {
+            direction: rtl;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            text-decoration: none;
+            background: #005088;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
 
-    <header class="header-nav">
+    <header class="header-nav notranslate">
         <a href="index.html">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">SERVICE</a>
-        <a href="#">CONTACT</a>
-        <a href="#">POLITIQUES</a> </header>
+        <a href="about.html">ABOUT</a>
+        <a href="service.html">SERVICE</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="politiques.html">POLITIQUES</a> 
+    </header>
 
     <nav>
         <a href="#mg">Malgache</a> <a href="#fr">Français</a> <a href="#en">English</a> 
