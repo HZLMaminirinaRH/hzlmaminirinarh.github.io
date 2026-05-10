@@ -1,3 +1,4 @@
+
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'mg', 
@@ -17,3 +18,27 @@ function googleTranslateElementInit() {
         }
     }, 1000);
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const portalForm = document.getElementById('portalForm');
+    
+    if (portalForm) {
+        portalForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            
+            if (user.trim() !== "" && pass.trim() !== "") {
+                
+                window.location.href = "vision.html";
+            } else {
+               
+                alert("Fenoy ny banga azafady (Veuillez remplir tous les champs)");
+            }
+        });
+    }
+});
